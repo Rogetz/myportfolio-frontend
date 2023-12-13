@@ -1,0 +1,114 @@
+body{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+.main-div{
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+}
+
+.intro-wrapper{
+    position: absolute;
+    top: 10rem;
+    left: 3rem;
+    width: 30rem;
+    height: 25rem;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+/*rotate the whole div, but first of all just write things plainly*/
+.social-div{
+    width: 3rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow: hidden;
+}
+.follow-span{
+    color: blue;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.5rem;
+    text-wrap: nowrap;
+    transform: rotateZ(90deg);
+}
+.social-separator{
+    width: 4rem;
+    height: 0.05rem;
+    margin-top: 2rem;
+    background-color: blue;
+    border: 0.1rem solid blue;
+    transform-origin: top;
+    transform: rotateZ(90deg) translateY(250%);
+}
+.social-contact{
+    font-size: 2rem;
+    color: blue;
+}
+.portfolio-intro{
+    width: 25rem;
+    height: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.professional-intro{
+    font-size: 1.7rem;
+    width: 100%;
+    height: 3rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.professional-description{
+    color: rgba(0,0,255,1);
+    display: none;
+    visibility: hidden;
+    font-weight: bold;
+    transition: all 5s smooth;
+    animation: colorAnime 5s alternate infinite;
+}
+.professional-description.active{
+    display: block;
+    visibility: visible;
+    position: absolute;
+    top: 0rem;
+    left: 0rem;
+}
+@keyframes colorAnime{
+    0%{
+        color: rgba(0,0,255,1);
+    }
+    25%{
+        color: rgba(255,0,255,1);  
+    }
+    50%{
+        color: rgba(150,50,255,1);
+    }
+    75%{
+        color: rgba(0,150,255,1);
+    }
+    100%{
+        color: rgba(0,255,0,1);
+    }
+}
+.intro-text{
+    font-size: 2.3rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.work-with-me{
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    background-color: blue;
+    color: white;
+    border-radius: 2rem;
+    border: none;
+    box-sizing: border-box;
+}
