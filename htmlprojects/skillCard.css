@@ -1,0 +1,108 @@
+body{
+    padding-top: 10rem;
+    padding-left: 2rem;
+    perspective: 100rem;
+}
+.cards-wrapper{
+    position: relative;
+    width: 30rem;
+    height: 30rem;
+    transform-style: preserve-3d;
+    margin: auto;
+    animation: wrapperRotate 10s linear infinite;
+}
+@keyframes wrapperRotate {
+    0%{
+        transform: rotateX(-20deg) rotateY(0deg);
+    }
+    100%{
+        transform: rotateX(-20deg) rotateY(360deg);   
+    }
+}
+.card{
+   width: 10rem;
+   height: 10rem;
+   left: 35%;
+   transform-style: preserve-3d;
+   background-color: white;
+   border: none;
+   position: absolute;
+   border-radius: 1rem;
+   backface-visibility: hidden;
+   transition: 0.45s smooth;
+   transform: rotateY(calc(var(--translate-difference)*60deg)) translateZ(10rem);
+   /*animation: cardIllusion 10s linear infinite;*/
+   box-shadow: 0.1rem 0.1rem 0.5rem -4px blue,-0.1rem -0.1rem 0.5rem -4px black; 
+}
+@keyframes cardIllusion {
+    0%{
+        transform: translateZ(calc(var(--translate-difference)*4rem)) translateX(calc(var(--translate-difference)*2rem));
+    }
+    100%{
+        transform: translateZ(calc(var(--translate-difference)*20rem)) translateX(calc(var(--translate-difference)*-5rem));
+    }
+
+}
+.card img.skill-img{
+    width: 100%;
+    height: 100%;
+    /*contain preserves the originality of the picture as compared to cover*/
+    object-fit: contain;
+    overflow: hidden;
+}
+.card div.skill-name{
+    z-index: 2;
+    width: auto;
+    text-wrap: nowrap;
+    height: 1.7rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    position: relative;
+    bottom: 1rem;
+    left: 0rem;
+    overflow: hidden;
+    color: white;
+    background-color: rgba(0,0,0,1);
+    border-radius: 2rem;
+    padding: 0.3rem;
+    box-sizing: border-box;
+    backdrop-filter: blur(10rem);
+    border: none;
+    box-shadow: 0.0001rem 0.0001rem 1.5rem 5px blue; 
+}
+div.name-wrapper{
+    z-index: 2;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border: none;
+    background-color: transparent;
+    border-radius: 1rem;
+    
+}
+.card span.fa{
+    position: absolute;
+    top: -0.5rem;
+    right: -0.5rem;
+    font-size: 2rem;
+    color: blue;
+    background-color: white;
+    padding: 0rem;
+    border-radius: 50%;
+    box-shadow: 0.1rem 0.1rem 0.5rem -5px blue,-0.1rem -0.1rem 0.5rem -5px green; 
+}
+
+.test{
+    width: 5rem;
+    height: 5rem;
+    background-color: red;
+    position: absolute;
+    top: 25rem;
+    left: 5rem;
+}

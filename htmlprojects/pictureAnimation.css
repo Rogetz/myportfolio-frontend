@@ -1,0 +1,37 @@
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+.wrapper{
+    width: 100%;
+    height: 100vh;
+    perspective: 100rem;
+    position: relative;
+}
+img{
+    position: absolute;
+    top: 2rem;
+    left: 0rem;
+    width: 25rem;
+    height: 50rem;
+    object-fit: cover;
+}
+img.img1{
+    z-index: 5;
+    width: 20rem;
+    height: 40rem;
+    transform: translateZ(20rem) translateY(30rem) translateX(20rem);
+}
+img.img2{
+    z-index: 3;
+    width: 20rem;
+    height: 45rem;
+    object-fit: cover;
+    transform: translateZ(10rem) translateY(32rem) translateX(10rem);
+}
+img.img3{
+    z-index: 2;
+    transform: translateZ(-20rem) translateX(20rem) translateY(40rem); 
+}
