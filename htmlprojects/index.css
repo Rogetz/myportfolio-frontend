@@ -1,3 +1,33 @@
+
+*{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    text-decoration: none;
+    user-select: none;
+}
+.major-div{
+    width: 100%;
+    min-height: 100vh;
+    display: none;
+    visibility: hidden;
+    position: relative;
+    transition: all 5s;
+}
+.major-div.active{
+    display: block;
+    visibility: visible; 
+    margin-left: 0rem;
+}
+.logo-div{
+    width: 7rem;
+    height: 3rem;
+    /*used contain to ensure it maintains the maximum logo size*/
+    object-fit: contain;
+}
+.intro.hidden{
+    display: none;
+    visibility: hidden; 
+}
 body{
     padding: 0;
     margin: 0;
@@ -6,9 +36,115 @@ body{
     box-sizing: border-box;
     user-select: none;
     background-color: rgba(0,0,0,1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
 }
 .header-div{
+    width: 100%;
+    min-height: 4rem;
+    position: relative;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: blue;
+    gap: 1rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     user-select: none;
+    z-index: 6;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.toggled-menu{
+    position: absolute;
+    width: auto;
+    height: auto;
+    right: 0.2rem;
+    top: 2.5rem;
+    display: none;
+    visibility: hidden;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    gap: 2rem;
+    padding: 0.5rem;
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+    z-index: 21;
+    backdrop-filter: blur(1rem);
+    border-bottom-left-radius: 2rem;
+    background-color: transparent;
+}
+.toggled-menu.active{
+    display: flex;
+    visibility: visible;
+}
+.fa-close{
+    display: none;
+    visibility: hidden;
+    color: rgba(255,0,0,1);
+    position: absolute;
+    right: 0.2rem;
+    top: 0.2rem;
+    font-size: 2rem;
+    z-index: 21;
+    backdrop-filter: blur(1rem);
+    width: fit-content;
+    height: fit-content;
+}
+.fa-bars{
+    display: none;
+    visibility: hidden;
+    position: absolute;
+    right: 0.2rem;
+    top: 0.2rem;
+    font-size: 2rem;
+    z-index: 21;
+    backdrop-filter: blur(1rem);
+    width: fit-content;
+    height: fit-content;
+    color: rgba(255,255,255,1);
+}
+.header-content{
+    width: auto;
+    background-color: transparent;
+    padding: 0.2rem 0.4rem;
+    border-radius: 1rem;
+    box-shadow: 0.01rem 0.01rem 0.5rem -1px blue,-0.01rem -0.01rem 0.5rem -1px white; 
+}
+a{
+    text-decoration: none;
+}
+.section-header{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0.5rem;
+    width: fit-content;
+    height: fit-content;
+    color: rgba(255,255,255,1);
+    box-sizing: border-box;
+    padding: 0.2rem 0.5rem;
+    text-align: center;
+    background-color: transparent;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-shadow: 0.01rem 0.01rem 0.5rem -1px blue,-0.01rem -0.01rem 0.5rem -1px white; 
+    font-weight: bolder;
+    font-size: 1.5rem;
+    border-radius: 2rem;
+    z-index: 20;
+    backdrop-filter: blur(1rem);
+}
+button.work-with-me,.fa-bars,.fa-close{
+    cursor: pointer;
+}
+
+.header-content:hover{
+    color: white;
 }
 .main-div{
     width: 100%;
@@ -21,13 +157,13 @@ body{
     align-items: center;
     user-select: none;
 }
-@media screen and (max-width: 551px){
+@media screen and (max-width: 591px){
     div.intro-wrapper{
         width: 100%;
         height: 100vh;
         padding-top: 30rem;
         padding: 0.5rem 0.5rem;
-        background-image: linear-gradient(rgba(0,0,255,0.5),rgba(0,0,0,1)),url("./MkuuBackgroundRemoved.png");
+        background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,1)),url("./MkuuBackgroundRemoved.png");
         background-size: cover;
         background-repeat: no-repeat;
     }
@@ -38,6 +174,18 @@ body{
         display: none;
         visibility:hidden;
     }    
+    div.header-div{
+        display: none;
+        visibility: hidden;
+    }
+    .fa-close.active{
+        display: block;
+        visibility: visible;
+    }
+    .fa-bars.active{
+        display: block;
+        visibility: visible;
+    }  
 }
 .intro-wrapper{
     position: relative;
@@ -81,8 +229,8 @@ body{
     position:absolute;
     top: 0rem;
     left: 0rem;
-    width: 100%;
-    height: 100%;
+    width: fit-content;
+    height: fit-content;
     font-size: 2rem;
     display: flex;
     justify-content: center;
@@ -92,6 +240,7 @@ body{
     box-sizing: border-box;
     border-radius: 0.25rem;
 }
+
 .portfolio-intro{
     width: 35rem;
     height: 100%;
@@ -190,7 +339,6 @@ body{
     background-color: black;
     color: white;
     box-shadow: 0.1rem 0.1rem 0.5rem -4px blue,-0.1rem -0.1rem 0.5rem -4px white; 
-
 }
 .profile-div{
     width: 35rem;
@@ -547,22 +695,33 @@ div.name-wrapper{
 
 
 /* Third div*/
-.third-div{
+.third-div{    
     width: 90%;
     min-height: 100vh;
     position: relative;
+    top: 0rem;
     background-color: transparent;
-    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 4rem;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.third-div-lower-section{
+    width: 100%;
+    min-height: 100vh;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     gap: 3rem;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    overflow: hidden;
 }
 .third-div .start-div{
     position: relative;
-    top: 5rem;
+    top: 0rem;
     left: 0rem;
     width: 20rem;
     height: auto;
@@ -590,7 +749,23 @@ div.name-wrapper{
     justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
+    transition: all 3s;
     padding-top: 3rem;
+}
+@media screen and (max-width: 591px){
+    div.third-div .skills-section{
+        flex-direction: column;
+        padding-left: 1rem;
+    }
+    div.third-div .skills-section .single-skill.show{
+        margin-right: 0rem;
+    }
+    div.third-div .skills-section .single-skill{
+        margin-right: -100%;
+    }
+    div.main-div{
+        top: 2rem;
+    }
 }
 .third-div .skills-section .single-skill{
     width: 20rem;
@@ -605,6 +780,9 @@ div.name-wrapper{
     background-color: rgba(0,0,255,0.025);
     box-shadow: 0.1rem 0.1rem 0.5rem -5px rgba(255,255,255,1),-0.1rem -0.1rem 0.5rem -5px green; 
     animation: danglingEffect 1s linear alternate infinite;
+}
+.third-div .skills-section .single-skill.show{
+    margin-right: 0rem;
 }
 .third-div .skills-section .single-skill:hover{
     animation: none;
@@ -687,3 +865,364 @@ div.name-wrapper{
     height: auto;
 }
 /*-----End of third div---- */
+
+
+/* Projects Div*/
+.projects-div{
+    position: relative;
+    top: 0rem;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 1rem;
+    box-sizing: border-box;
+    gap: 2rem;
+}
+@media screen and (max-width: 591px) {
+    div.projects-div{
+        padding: 0;
+    }    
+    div.project-lower-section{
+        padding: 1rem;
+    }
+}
+.project-lower-section{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    /*padding: 2rem 2rem;*/
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.project-profile{
+    width: 30rem;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    gap: 1rem;
+    box-sizing: border-box;
+    margin-left: -100%;
+    transition: all 3s;
+}
+.project-profile.show{
+    margin-left: 0rem;
+}
+.project-description{
+    width: 30rem;
+    height: auto;
+    flex-grow: 1;
+    margin-right: 0rem;
+    transition: all 3s;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.project-title{
+    color: rgba(0,0,255,1);
+}
+.brief-project-description{
+    font-size: 1rem;
+    font-weight: lighter;
+}
+.actual-profile-pic{
+    width: 25rem;
+    height: 20rem;
+    object-fit: cover;
+}
+
+
+/*----End of projects div---------*/
+
+/* The  intro animation */
+
+
+
+
+
+.intro{
+    width: 100%;
+    height: 100vh;
+    border-radius: 1rem;
+    transition: all 3s;
+}
+@media screen and (max-width : 768px){
+    .intro-section{
+        width: 100%;
+    }
+    .intro{
+        width:100%;
+    }
+}
+.side{
+    top: -40rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+    text-align: center;
+    overflow: hidden;
+    background-color: transparent;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    transition: all 5s;
+    z-index: 10;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-repeat: no-repeat;
+    transform-origin: 50% 50%;        
+    position: relative;
+    transform: rotateY(calc(90deg * var(--i))) translateZ(5rem);
+}
+.side.hidden{
+    display: none;
+    visibility: hidden;
+}
+
+@keyframes introAnimation{
+    0%{
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    100%{
+        transform: rotateX(0deg) rotateY(360deg);
+    }
+}
+.intro .profession{
+    background-color: black;
+    width: fit-content;
+    margin-top: -20rem;
+    color: black;
+    transition: all 5s;
+}
+.intro .profession.active{
+    color: white;
+    background-color: transparent;
+    margin-top: 0;
+}
+.intro .arrow-container .action-button{
+    width: 8rem;
+    height: 2.5rem;
+    margin-right: 0;
+    border-radius: 2rem;
+    background-color: rgba(255,0,255,0.7);
+    font-weight: bolder;
+    font-size: 1rem;
+    color: blue;
+    border: none;
+    box-shadow: 0.1rem 0.1rem 0.3rem 0.05rem rgba(0,0,255,1);
+}
+.intro .arrow-container .action-button:hover{
+    background-color: white;
+}
+
+.intro .arrow-container .fa-long-arrow-right{
+    animation: arrowMove 1s infinite alternate;
+    color:white;
+    transition: all 0.3s;
+}
+.intro .arrow-container .fa-long-arrow-right:hover{
+    animation-play-state: paused;
+    margin-right: 0;
+}
+@keyframes arrowMove{
+    0%{
+        margin-right: 2rem;
+        transform: rotateX(0deg);
+    }
+    100%{
+        margin-right: 0rem;
+        transform: rotateX(360deg);
+    }
+}
+.intro .arrow-container{
+    font-size: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10rem;
+    color: blue;
+    opacity: 0;
+    transform-origin: left;
+    transform: rotate(0deg);
+    transition: all 3s;
+}
+.intro .arrow-container.active{
+    column-gap: 0.3rem;
+    transform: rotate(360deg);
+    opacity: 1;
+}
+.side.fade-in{
+    top: 3rem;
+}
+.intro .greetings{
+    font-size: 1.5rem;
+    font-weight: bolder;
+    position: relative;
+    margin-left: -120%;
+    color: rgba(0,255,0,1);
+    transition: all 1s;
+    animation: greetAnime 2s linear infinite;
+}
+@keyframes greetAnime{
+    0%{
+        color: rgba(0,255,150,1);
+    }
+    25%{
+        color: rgba(255,0,255,1);  
+    }
+    50%{
+        color: rgba(0,0,255,1);  
+    }
+    75%{
+        color: rgba(150,0,255,1);    
+    }
+    100%{
+        color: rgba(255,255,255,1);    
+    }
+}
+.intro .greetings.slide-right{
+    margin-left: 5%;
+}
+.intro .my-name{
+    color: blue;
+    display: flex;
+    justify-content: center;
+}
+.intro .my-name span{
+    background-color: blue;
+    opacity: 0;
+    transition: all 0.5s;
+}
+.intro .my-name span.active{
+    opacity: 1;
+    background-color: transparent;
+}
+
+.intro .my-name span.space-center{
+    width: 2rem;
+    height: 2rem;
+    background-color: transparent;
+}
+.intro .pronoun{
+    color: rgba(255,255,255,1);
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: all 1s;
+}
+.intro .pronoun.active{
+    opacity: 1;
+}
+/* ------------End of the intro animation--------*/
+
+/*for the wrapper */
+div.text-wrapper{
+    width: auto;
+    height: 3rem;
+    color: blue;
+    font-size: 2.5rem;
+    font-weight: bolder;
+    position: absolute;
+    top: 0.5rem;
+    left: 0.2rem;
+    z-index: 21;
+}
+svg{
+    position: absolute;
+    left: 19px;
+    bottom: 0px;
+    transform: rotateZ(0deg);
+    transform-origin: center;
+    animation: svgRotate linear 5s infinite;
+}
+@keyframes svgRotate {
+    0%{
+        transform: rotateZ(0deg);
+    }   
+    100%{
+        transform: rotateZ(360deg);
+    } 
+}
+polygon{
+    fill: white;
+}
+.text-wrapper .last-part{
+    color: rgba(255,0,255,1);
+}
+/*---End of wrapper-------- */
+
+/*The footer description */
+.footer{
+    position: relative;
+    width: 100%;
+    min-height: 5rem;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    background-image: linear-gradient(rgba(0,0,255,0.1) 5%,rgba(0,0,0,0)50%);
+}
+@media screen and (max-width: 591px) {
+    div.footer{
+        background-image: linear-gradient(rgba(0,0,255,1) 5%,rgba(0,0,0,0)50%);
+    } 
+}
+.footer .programming-languages{
+    width: 100%;
+    min-height: 2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: space-evenly;
+    justify-content: center;
+}
+.footer .programming-languages .fa-brands{
+    font-size: 3rem;
+    border-radius: 0rem;
+    background-color: transparent;
+} 
+.footer p{
+    color: rgba(255,255,255,1);
+    font-size: 1.3rem;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+}
+.footer .socials span.fa-youtube{
+    color: red;
+}
+.footer .socials span.fa-github{
+    color: black;
+}
+.footer .socials span.fa-twitter{
+    color: rgba(0,200,255,1);
+}
+.footer .socials{
+    width: 100%;
+    min-height: 2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: space-evenly;
+    justify-content: center;
+}
+.footer .fa-brands{
+    position:relative;
+    width: fit-content;
+    height: fit-content;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: blue;
+    background-color: white;
+    box-sizing: border-box;
+    border-radius: 0.25rem;
+}
+/*----End of footer----- */

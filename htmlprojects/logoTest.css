@@ -1,0 +1,41 @@
+body{
+    background-color: black;
+}
+.text-wrapper{
+    color: blue;
+    font-size: 2.5rem;
+    font-weight: bolder;
+    position: absolute;
+    top: 0.5rem;
+    left: 0.2rem;
+}
+.text-wrapper-2{
+    color: blue;
+    font-size: 2.5rem;
+    font-weight: bolder;
+    position: absolute;
+    top: 10.5rem;
+    left: 0.2rem;
+}
+svg{
+    position: absolute;
+    left: -4px;
+    bottom: -16px;
+    transform: rotateZ(0deg);
+    transform-origin: center;
+    animation: svgRotate linear 5s infinite;
+}
+@keyframes svgRotate {
+    0%{
+        transform: rotateZ(0deg);
+    }   
+    100%{
+        transform: rotateZ(360deg);
+    } 
+}
+polygon{
+    fill: blue;
+}
+.text-wrapper .last-part{
+    color: rgba(255,0,255,1);
+}
