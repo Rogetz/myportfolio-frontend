@@ -44,7 +44,6 @@ window.addEventListener("load",function(){
 
 // select all the elements you want to work on.
 let projectProfiles = document.querySelectorAll(".project-profile")
-let thirdDivs = document.querySelectorAll(".third-div")
 let skills = document.querySelectorAll(".third-div .skills-section .single-skill")
 let menuIcon = document.querySelector(".menu-icon")
 let faBars = document.querySelector(".fa-bars")

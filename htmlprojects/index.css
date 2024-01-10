@@ -117,6 +117,12 @@ body{
     border-radius: 1rem;
     box-shadow: 0.01rem 0.01rem 0.5rem -1px blue,-0.01rem -0.01rem 0.5rem -1px white; 
 }
+.header-content a{
+    color: blue;
+}
+.header-content a:hover{
+    color: rgba(255,255,255,1);
+}
 a{
     text-decoration: none;
 }
@@ -156,6 +162,7 @@ button.work-with-me,.fa-bars,.fa-close{
     justify-content: space-evenly;
     align-items: center;
     user-select: none;
+    z-index: 5;
 }
 @media screen and (max-width: 591px){
     div.intro-wrapper{
@@ -239,6 +246,24 @@ button.work-with-me,.fa-bars,.fa-close{
     background-color: white;
     box-sizing: border-box;
     border-radius: 0.25rem;
+}
+.single-skill .logo-div .fa{
+    position:absolute;
+    top: 0rem;
+    left: 0rem;
+    width: fit-content;
+    height: fit-content;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: blue;
+    background-color: transparent;
+    box-sizing: border-box;
+    border-radius: 0.25rem;
+}
+.single-skill:nth-of-type(even) .logo-div .fa{
+    color: rgba(0,255,0,1);
 }
 
 .portfolio-intro{
@@ -705,7 +730,7 @@ div.name-wrapper{
     flex-direction: column;
     align-items: center;
     gap: 3rem;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     box-sizing: border-box;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -749,8 +774,10 @@ div.name-wrapper{
     justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
+    perspective: 100rem;
     transition: all 3s;
     padding-top: 3rem;
+    padding-bottom: 1rem;
 }
 @media screen and (max-width: 591px){
     div.third-div .skills-section{
@@ -844,6 +871,7 @@ div.name-wrapper{
     font-size: 3rem;
     width: fit-content;
     height: fit-content;
+    background-color: transparent;
  }
 .single-skill .skill-title{
     position: relative;
@@ -854,6 +882,9 @@ div.name-wrapper{
     width: 100%;
     height: auto;
     padding: 0rem 1.5rem;
+}
+.single-skill:nth-of-type(even) .skill-title{
+    color: rgba(0,255,0,1);
 }
 .single-skill .skill-description{
     color: rgba(255,255,255,1);
