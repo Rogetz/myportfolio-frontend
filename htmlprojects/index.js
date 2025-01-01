@@ -11,6 +11,15 @@ let arrowRight = document.querySelector(".intro .fa-long-arrow-right")
 let side = document.querySelector(".side")
 let majorDiv = document.querySelector(".major-div")
 
+// select all the elements you want to work on.
+let projectProfiles = document.querySelectorAll(".project-profile")
+let skills = document.querySelectorAll(".third-div .skills-section .single-skill")
+let menuIcon = document.querySelector(".menu-icon")
+let faBars = document.querySelector(".fa-bars")
+let faClose = document.querySelector(".fa-close")
+let toggledMenu = document.querySelector(".toggled-menu")
+
+
 
 window.addEventListener("load",function(){
     this.window.setTimeout(function(){
@@ -42,13 +51,6 @@ window.addEventListener("load",function(){
 
 
 
-// select all the elements you want to work on.
-let projectProfiles = document.querySelectorAll(".project-profile")
-let skills = document.querySelectorAll(".third-div .skills-section .single-skill")
-let menuIcon = document.querySelector(".menu-icon")
-let faBars = document.querySelector(".fa-bars")
-let faClose = document.querySelector(".fa-close")
-let toggledMenu = document.querySelector(".toggled-menu")
 
 /*for th toggling of the menu icon */
 faBars.addEventListener('click',function(e){

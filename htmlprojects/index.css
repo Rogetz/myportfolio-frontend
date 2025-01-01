@@ -164,6 +164,7 @@ button.work-with-me,.fa-bars,.fa-close{
     user-select: none;
     z-index: 5;
 }
+
 @media screen and (max-width: 591px){
     div.intro-wrapper{
         width: 100%;
@@ -798,6 +799,10 @@ div.name-wrapper{
     div.main-div{
         top: 2rem;
     }
+    div.link-div{
+        display: flex;
+        flex-direction: column;
+    }
 }
 .third-div .skills-section .single-skill{
     width: 20rem;
@@ -929,6 +934,7 @@ div.name-wrapper{
     height: auto;
     display: flex;
     flex-wrap: wrap;
+    gap: 2rem;
     /*padding: 2rem 2rem;*/
     box-sizing: border-box;
     overflow: hidden;
@@ -941,6 +947,7 @@ div.name-wrapper{
     box-shadow: 0.1rem 0.1rem 0.3rem 0.05rem rgba(0,0,255,1), inset 0.1rem 0.1rem 0.3rem 0.05rem rgba(0,0,255,1);
     box-sizing: border-box;
     margin-left: -100%;
+    overflow: hidden;
     transition: all 3s;
 }
 .project-profile.show{
@@ -955,11 +962,12 @@ iframe.iframe-div{
 }
 
 
-.project-description{
+div.project-description{
     width: 15rem;
     height: auto;
     flex-grow: 1;
     margin-right: 0rem;
+    margin-top: 2rem;
     transition: all 3s;
     box-sizing: border-box;
     color: white;
@@ -1207,7 +1215,7 @@ polygon{
     min-height: 5rem;
     padding-top: 3rem;
     padding-bottom: 2rem;
-    background-image: linear-gradient(rgba(0,0,255,0.1) 5%,rgba(0,0,0,0)50%);
+    background-image: transparent;
 }
 @media screen and (max-width: 591px) {
     div.footer{
@@ -1240,7 +1248,7 @@ polygon{
     color: red;
 }
 .footer .socials span.fa-github{
-    color: black;
+    color: white;
 }
 .footer .socials span.fa-twitter{
     color: rgba(0,200,255,1);
@@ -1264,7 +1272,7 @@ polygon{
     justify-content: center;
     align-items: center;
     color: blue;
-    background-color: white;
+    background-color: transparent;
     box-sizing: border-box;
     border-radius: 0.25rem;
 }
