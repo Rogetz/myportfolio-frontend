@@ -1244,7 +1244,7 @@ polygon{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: medium;
 }
-.footer .socials span.fa-youtube{
+.footer .socials span.fa-mail-bulk{
     color: red;
 }
 .footer .socials span.fa-github{
@@ -1264,6 +1264,19 @@ polygon{
     justify-content: center;
 }
 .footer .fa-brands{
+    position:relative;
+    width: fit-content;
+    height: fit-content;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: blue;
+    background-color: transparent;
+    box-sizing: border-box;
+    border-radius: 0.25rem;
+}
+.footer .fa-solid{
     position:relative;
     width: fit-content;
     height: fit-content;
