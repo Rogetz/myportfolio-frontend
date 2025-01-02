@@ -64,7 +64,7 @@ body{
     position: absolute;
     width: auto;
     height: auto;
-    right: 0.2rem;
+    left: 0.2rem;
     top: 2.5rem;
     display: none;
     visibility: hidden;
@@ -89,7 +89,7 @@ body{
     visibility: hidden;
     color: rgba(255,0,0,1);
     position: absolute;
-    right: 0.2rem;
+    left: 0.2rem;
     top: 0.2rem;
     font-size: 2rem;
     z-index: 21;
@@ -101,7 +101,7 @@ body{
     display: none;
     visibility: hidden;
     position: absolute;
-    right: 0.2rem;
+    left: 0.2rem;
     top: 0.2rem;
     font-size: 2rem;
     z-index: 21;
@@ -165,7 +165,7 @@ button.work-with-me,.fa-bars,.fa-close{
     z-index: 5;
 }
 
-@media screen and (max-width: 591px){
+@media screen and (max-width: 879px){
     div.intro-wrapper{
         width: 100%;
         height: 100vh;
@@ -177,6 +177,7 @@ button.work-with-me,.fa-bars,.fa-close{
     }
     div.intro-wrapper p.intro-text{
         text-align: left;
+        font-size: 1.5rem;
     }
     div.social-div{
         display: none;
@@ -197,7 +198,9 @@ button.work-with-me,.fa-bars,.fa-close{
 }
 .intro-wrapper{
     position: relative;
-    width: 40rem;
+    width: 20rem;
+    flex-grow: 1;
+    flex-shrink: 0;
     height: 25rem;
     display: flex;
     flex-direction: row;
@@ -347,7 +350,10 @@ div.intro,.side{
     text-align: left;
     color: rgba(255,255,255,1);
     font-weight: bold;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: "Courier New",monospace,"monospace";
+    /*
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;    
+    */
 }
 .full-description{
     margin: 2rem 0rem;
@@ -373,20 +379,33 @@ div.intro,.side{
 .profile-div{
     width: 35rem;
     height: 40rem;
+    flex-grow: 1;
+    flex-shrink: 0;
     perspective: 100rem;
     overflow: hidden;
     position: relative;
+    border-bottom-right-radius: 23rem;
 }
-@media screen and (max-width: 551px){
+
+@media screen and (max-width: 879px){
     div.profile-div{
         display:none;
         visibility: hidden;
+        margin-bottom: 2rem;
+        border-bottom-right-radius: 19rem;
     }
 }
+/*
+@media screen and (min-width: 1001px){
+    div.profile-div{
+        height:42rem;
+    }
+}*/
 img.actual-profile{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit:contain;
+    object-position: center;
     filter: grayscale(100%);
 }
 .social-wrapper{
@@ -1181,7 +1200,7 @@ div.text-wrapper{
     font-weight: bolder;
     position: absolute;
     top: 0.5rem;
-    left: 0.2rem;
+    right: 0.2rem;
     z-index: 21;
 }
 svg{
@@ -1289,6 +1308,9 @@ polygon{
     box-sizing: border-box;
     border-radius: 0.25rem;
 }
+.footer .fa-google{
+    color: rgba(255,0,150,1)
+}
 /*----End of footer----- */
 
 div.link-div{
@@ -1302,8 +1324,17 @@ link.live-link{
 }
 
 a.link-ref{
-    color: blue;
+    color: rgba(0,0,255);
+    background-color: white;
+    border-radius: 2rem;
+    padding: 0.5rem 2rem;
+    width: fit-content;
+    height: fit-content;
     font-size: 1.6rem;
     font-weight: bold;
+}
+a.link-ref:hover{
+    background-color: blue;
+    color: rgba(255,255,255,1);
 }
 
