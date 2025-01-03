@@ -77,7 +77,8 @@ let intersectionObserver = new IntersectionObserver(function(entries){
         }
         else{
             // remove it once more  so that it will be animating each time its reached
-            entry.target.classList.remove("show")
+            //have had to remove this effect of removing after showing because of perfomenace issues
+            //entry.target.classList.remove("show")
         }
     })
 })

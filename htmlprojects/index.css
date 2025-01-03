@@ -969,6 +969,15 @@ div.name-wrapper{
     overflow: hidden;
     transition: all 3s;
 }
+@media screen and (max-width: 719px) {
+    .project-profile{
+        height: fit-content;
+    }
+    div.project-lower-section{
+        margin-bottom: 10rem;
+    }
+}
+
 .project-profile.show{
     margin-left: 0rem;
 }
