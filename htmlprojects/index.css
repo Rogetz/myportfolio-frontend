@@ -1338,3 +1338,10 @@ a.link-ref:hover{
     color: rgba(255,255,255,1);
 }
 
+img.project-images{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 2rem;
+    overflow: hidden;
+}
