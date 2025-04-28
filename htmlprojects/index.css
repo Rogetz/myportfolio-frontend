@@ -1240,6 +1240,9 @@ polygon{
 .footer{
     position: relative;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     min-height: 5rem;
     padding-top: 3rem;
     padding-bottom: 2rem;
@@ -1299,7 +1302,7 @@ polygon{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: blue;
+    color: white;
     background-color: transparent;
     box-sizing: border-box;
     border-radius: 0.25rem;
@@ -1330,6 +1333,44 @@ div.link-div{
 }
 link.live-link{
     font-size: 2rem;
+}
+p.copy-right{
+    color:white;
+}
+p.footer-p{
+    color:white;
+}
+a.mail-link{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    height: auto;
+    background-color:transparent;
+    padding: 1rem 4rem;
+    border-radius: 1rem;
+    border: 2px solid white;
+}
+
+a .feedback-email{
+    background-color: transparent;
+    color:white;
+    font-weight: bold;
+    font-size: larger;
+    padding: 0.5rem 1rem;
+    margin: 2;
+    border:none;
+}
+span.fa-caret-right{
+    font-weight: bold;
+    font-size: xx-large;
+    color: white;
+}
+
+a .feedback-email:hover{
+    color:green;
 }
 
 a.link-ref{
